@@ -6,58 +6,72 @@
  * @flow strict-local
  */
 
-
-import React, { Component } from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
   View,
   Text,
-  TextInput,
   StatusBar,
 } from 'react-native';
 
-
+import {
+  Header,
+  LearnMoreLinks,
+  Colors,
+  DebugInstructions,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
 
 const App: () => React$Node = () => {
-  const [value, onChangeText] = React.useState('Name');
   return (
-    <ScrollView>
-    <Text>Agrega tus Datos en Formulario</Text>
-    <View>
-      <Text>Tu Foto Reciente</Text>
-      <Image
-        source={{
-          uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
-        }}
-        style={{ width: 200, height: 200 }}
-      />
-    </View>
-    <TextInput
-      style={styles.textContainer}
-      onChangeText={text => onChangeText(text)}
-      value={value}
-    />
-     <TextInput
-        style={styles.textContainer}
-        defaultValue="Telefono"
-      />
-      <TextInput
-        style={styles.textContainer}
-        defaultValue="Correo"
-      />
-  </ScrollView>
-
-  );
+    <View style={styles.body}>
+      <Text style={styles.sectionTitle}>Contact Us</Text>
+      <Text>
+        Thisis a Contact View
+      </Text>
+  </View>
+  )
 };
 
 const styles = StyleSheet.create({
- textContainer:{
-  height: 40, 
-  borderColor: 'gray', 
-  borderWidth: 1
- }
+  scrollView: {
+    backgroundColor: Colors.lighter,
+  },
+  engine: {
+    position: 'absolute',
+    right: 0,
+  },
+  body: {
+    backgroundColor: Colors.white,
+  },
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: Colors.black,
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+    color: Colors.dark,
+  },
+  highlight: {
+    fontWeight: '700',
+  },
+  footer: {
+    color: Colors.dark,
+    fontSize: 12,
+    fontWeight: '600',
+    padding: 4,
+    paddingRight: 12,
+    textAlign: 'right',
+  },
 });
 
 export default App;
